@@ -1,8 +1,36 @@
-import mongoose from "mongoose";
-import {DB_NAME} from "./constants";
+//require('dotenv').config({path: './env'})
 
+import dotenv from "dotenv"
+
+
+// import mongoose from "mongoose";
+// import {DB_NAME} from "./constants";
+import connectDB from "./Db/index.js";
+
+dotenv.config({
+    path: './env'
+})
+
+
+connectDB()
+
+
+
+
+
+
+
+
+
+
+/*
 import express from "express";
 const app = express()
+
+// datbase connect karte samya humein asyn await or try catch ka use karna chahiye jisse ki koi 
+// tarah ki dikkat na aaye
+
+
 
 (async () => {
     try {
@@ -24,3 +52,4 @@ const app = express()
         throw error
     }
 })()
+    */
