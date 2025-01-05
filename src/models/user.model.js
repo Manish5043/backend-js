@@ -55,7 +55,8 @@ const userSchema = new Schema(
     }
 )
 
-// arrow function mein this ka contexgtt nahi hota ha
+// arrow function mein this ka context nahi hota ha
+//pre isiliye use krte h jaisae ki save hone se pahle hume agar password encrypt karna hot to
 userSchema.pre("save", async function(next) {
     if(!this.isModified("password")) return next();
 
