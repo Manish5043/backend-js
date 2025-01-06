@@ -30,7 +30,7 @@ const registerUser = asyncHandler( async (req,res) => {
         throw new ApiError(400, "ALL fields are required")
     }
 
-    const existedUser = User.findOne({
+    const existedUser = await User.findOne({
         $or: [{username},{email}]
     })
     if(existedUser) {
@@ -38,7 +38,13 @@ const registerUser = asyncHandler( async (req,res) => {
     }
     // code functionalities written within multer properties
     const avatarlocalpath = req.files?.avatar[0]?.path;
-    const coveriamgelocalpath = req.files?.coverImage[0]?.path;
+    //const coveriamgelocalpath = req.files?.coverImage[0]?.path;
+
+    let coverimagelocalpath;
+    if(req.files && Array.isArray(req.files.coverImage) && req.files.coverImage.length > 0){
+        coverimagelocalpath = req.files.coverImage[0].path
+
+    }
 
     if (!avatarlocalpath) {
         throw new ApiError(400, "Avatar files is required")
