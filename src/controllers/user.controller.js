@@ -268,7 +268,7 @@ const changeCurrentPassword = asyncHandler(async(req, res) => {
 
 
 const getCurrentUser = asyncHandler(async (req, res) => {
-    return res.status(200).json(200, req.user, "current user fetched successfully")
+    return res.status(200).json(new ApiResponse(200, req.user, "current user fetched successfully"))
 })
 
 // production mein file update karna hoto uska alg hi ek file mein save karke rakh lo jaise image update karni hogi to wahin se update aur save ho jaayegi naaki user ke saath actuaaly mein userdetail jab update hoga to baar baar text bhi update hoga aur file ko isiliye alag se handle karlete hai
@@ -281,7 +281,7 @@ const updateAccountDetails = asyncHandler(async(req, res) => {
         throw new ApiError(400, "All fields are required")
     }
 
-    const user = User.findByIdAndUpdate(req.user?._id,
+    const user = await User.findByIdAndUpdate(req.user?._id,
         {
            $set: {
             fullname,
