@@ -14,3 +14,8 @@ const subscriptionSchema = new Schema({
 
 
 export const Subscription = mongoose.model("Subscription", subscriptionSchema)
+
+
+// siubscriber count channel se aata hai na ki user count se
+// ek document banta h jo store krta ek to channel name aur subscriber jo aay ehai
+// jitne documents utne subscriber aapke
