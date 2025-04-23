@@ -3,7 +3,7 @@
 
 
 
-# 🚀 Backend API - JavaScript
+#  Backend API - JavaScript
 
 This repository contains the backend code for your JavaScript application. It includes API endpoints, middleware, and configurations necessary for the server-side operations.
 
@@ -40,7 +40,7 @@ This repository contains the backend code for your JavaScript application. It in
 - Mongoose: ODM for MongoDB.
 - Prettier: Code formatter.
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
